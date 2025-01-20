@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test01.html</title>
+</head>
+<body>
+    
+    <p>p1</p>
+    <p class="my-class">p2</p>
+    <p class="my-class">p3</p>
+    <p class="my-class">p4</p>
+    <p id="one">p5</p>
+    <input type="text" id="inputMsg">
+    <button id="changecolor">changecolor</button>
+    <button id="changeBtn">change</button>
+    <button id="changeBtn2">change2</button>
+    <script>
+        document.querySelector("#changecolor").addEventListener("click", function(){
+            const ps = document.querySelectorAll("p")
+            for(let i=0; i<5; i++){
+                ps[i].style.color="red";
+            }
+        });
+
+         //위의 버튼을 눌렀을때 모든 p요소의 innerText를 "changed!"로 변경해 보세요.
+         document.querySelector("#changeBtn").addEventListener("click", ()=>{
+            //모든 p요소의 참조값을 배열에 담긴채로 리턴받기
+            const ps = document.querySelectorAll("p");
+            for(let i=0; i<5; i++){
+                ps[i].innerText="clicked!";
+            }
+         })
+         
+    </script>
+    <!-- jquery 로딩-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"> </script>
+    <script>
+        
+        $("#changeBtn2").on("click", ()=>{ });
+
+   </script>
+
+
+
+    <script>
+         //.on 이벤트리스터를 등록하는동작 .on하고 이벤트동작만 변경되면된다.
+         $("#changeBtn2").on("click", ()=>{ 
+            $("p").text("clicked!");
+        });
+
+    </script>
+       
+</body>
+</html>

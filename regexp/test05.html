@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test05.html</title>
+    <style>
+        input{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>정규표현식 활용 예제</h1>
+    <input type="text" id="source" placeholder="문자열 입력..">
+    <input type="text" id="reg" placeholder="정규표현식작성..">
+    <button id="extractBtn">추출</button>
+    <ul id="list">
+
+
+    </ul>
+    <script>
+        document.querySelector("#extractBtn").addEventListener("click", ()=>{
+            //ul에 빈 문자열을 강제로 넣어줘서 ul비우기
+            document.querySelector("#list").innerText="";
+
+            //입력한 값 읽어오기
+            const source = document.querySelector("#source").value;
+            const regStr = document.querySelector("#reg").value;
+
+            const reg=new RegExp( regStr, "g");
+            
+            while(true){
+                const match = reg.exec(source); 
+                if(match==null) break;
+
+                //단어
+                const word=match[0];
+
+                const li =document.createElement("li");
+                li.innerText=word;
+                document.querySelector("#list").append(li);
+            }
+        });
+
+        //kimgura is kimgura or leegura is leegura
+        //[^ ]+
+    
+    </script>
+    
+</body>
+</html>

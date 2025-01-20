@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if.html</title>
+</head>
+<body>
+    <h1>if문 사용해보기</h1>
+    <button onclick="check()">홀짝 확인하기</button>
+    <br>
+    <button onclick="check2()">짝수인지 홀수인지 확인하기</button>
+    <br>
+    <button onclick="check3()">3짝수인지 홀수인지 확인하기</button>
+    <br>
+    <button onclick="check4()">4수인지 홀수인지 확인하기</button>
+    <script>
+
+        function check4(){
+            let num = prompt("숫자입력");
+            //if문을 사용하지 않고 삼항 연산자를 이용해서 동일한 동작 할 수 있을까?
+            let result = (num%2==0) ? "짝수" : "홀수";
+            console.log(result);
+        }
+
+        function check3(){
+            let num = prompt("숫자를 입력하세요~");
+            if(num%2==0){
+                console.log("짝수")
+            }else{
+                console.log("홀수")
+            }
+        }
+
+        function check2(){
+            let num = prompt("숫자를입력하세요!");
+            if(num%2 == 0){
+                console.log("짝수입니다.")
+            }
+            if(num%2 == 1){
+                console.log("홀수입니다.");
+            }
+        }
+
+        function check(){
+            // prompt() 함수를 이용해서 숫자를 하나 입력받아서
+            let num = prompt("숫자을 입력하세요");
+            //만일 해당 숫자가 짝수이면 "짝수입니다."를 콘솔창에 출력
+            if(num%2 == 0){
+                console.log("짝수입니다!");
+            } 
+        }
+        
+        let isFirst = confirm("처음 방문이면 확인을 누르세요!");
+        if(isFirst){
+            console.log("반갑습니다. 처음 뵙겠습니다.");
+        }
+
+        console.log("입장 했습니다.");
+    </script>
+</body>
+</html>

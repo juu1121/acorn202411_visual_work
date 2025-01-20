@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>회원 가입 폼입니다.</h1>
+        <form action="send" method="get" novalidate>
+            <div>
+                <label for="email">이메일</label>
+                <input type="email" name="email" id="email" placeholder="이메일입력...">
+            </div>
+
+            <fieldset>
+                <legend>성별 선택</legend>
+                <label>
+                    <input type="radio" name="gender" value="man" checked> 남자
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="woman"> 여자
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>성별 teset</legend>
+                <label for="man">남자</label>
+                <input type="radio" id="man" name="gender" value="man" checked>
+        
+                <label for="woman">여자</label>
+                <input type="radio" id="woman" name="gender" value="woman">
+            </fieldset>
+            <button type="submit">가입</button>
+
+            <select name="fruits" size="4">
+                <option value="apple">사과</option>
+                <option value="banana">바나나</option>
+                <option value="cherry">체리</option>
+                <option value="apple">사과</option>
+                <option value="banana">바나나</option>
+                <option value="cherry">체리</option>
+              </select>
+
+        </form>
+    </div>
+</body>
+</html>

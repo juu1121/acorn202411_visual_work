@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test07.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height:100px;
+            background-color: yellow;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <button id="showBtn">보이기</button>
+    <button id="hideBtn">숨기기</button>
+    <button id="toggleBtn">토글</button>
+    <div class="box" id="myBox"></div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"> </script>
+    <script>
+
+        //애니메이션동작은 가급적이면 0.5초를 넘기지않게
+        // ()에 전달한 시간동안 동작 1000=1초/400=0.4초
+
+        $("#showBtn").click(()=>{
+            $("#myBox").show(1000);
+        });
+
+        $("#hideBtn").click(()=>{
+            $("#myBox").hide(1000, ()=>{
+                alert("뿅~");
+            });
+        });
+
+        $("#toggleBtn").click(()=>{
+            $("#myBox").toggle({ 
+                duration:3000,
+                complete:()=>{
+                    alert("toggled!");
+                }
+             });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop3.html</title>
+</head>
+<body>
+    <input type="text" id="inputMsg" placeholder="메세지 입력...">
+    <button onclick="save()">저장</button>
+    <button id = "saveBtn">저장2</button>
+    <script>
+       
+        (function(){
+            
+            let msgs=[];
+            document.querySelector("#saveBtn").addEventListener("click", function(){
+                //입력한 문자열
+                const msg=document.querySelector("#inputMsg").value
+                //빈배열에 입력한 문자열 추가
+                msgs.push(msg);
+            });
+        })();
+        //함수를 만들자마자 호출할 수도있다...함수를 만들자마자 콜하면 {}안의내용이 실행된다.....일단 몰라도 돼....되나.....
+
+        /*
+           5. input 요소와 button 을 배치하고
+            input 요소에 문자열을 입력하고 button 을 누르면 
+            입력한 문자열이 빈 배열에 계속 누적 되도록 프로그래밍 해 보세요. 
+        */
+
+        //함수 안에서 사용될 예정인 빈 배열을 미리 준비한다.
+        let msgs=[];
+
+        function save(){
+            //입력한 문자열
+            const msg=document.querySelector("#inputMsg").value
+            //빈배열에 입력한 문자열 추가
+            msgs.push(msg);
+            
+        }
+
+
+
+        //1. 빈 배열을 만들고 배열에 숫자 0~9 를 순서대로 저장해 보세요.
+        let nums = [];
+        for(let i=0; i<10; i++){
+            // push() 함수를 이용해서 차례대로 저장하기 
+            //nums.push(i);
+            // i 번째 인덱스에 i 를 저장하기 
+            nums[i]=i;
+        }
+
+        //2. 빈 배열을 만들고 배열에 숫자 1~10 를 순서대로 저장해 보세요.
+        let nums2=[];
+        for(let i=0; i<10; i++){
+            nums2.push(i+1);
+        }
+
+        //3. 빈 배열을 만들고 배열에 숫자 1~100 를 순서대로 저장해 보세요.
+        let nums3=[];
+        for(let i=0; i<100; i++){
+            nums3.push(i+1);
+        }
+
+        /*
+            4. 빈 배열을 만들고 배열에 숫자를 1~100 를 순서대로 저장한다음 
+            모든 숫자의 합을 콘솔창에 출력해 보세요.
+        */
+        let nums4=[];
+        for(let i=0; i<100; i++){
+            nums4.push(i+1);
+        }
+        //숫자를 모두 더해서 누적시킬 변수 만들고 0으로 초기화
+        let sum = 0;
+        //반복문 돌면서 
+        for(let i=0; i<nums4.length; i++){
+            // 배열의 i 번째 방에 있는 숫자를 sum 에 누적 시키기 
+            sum = sum + nums4[i];
+            //sum += nums4[i];
+        }
+
+        console.log("1~100 의 합계:"+ sum);
+
+        
+
+    </script>
+</body>
+</html>

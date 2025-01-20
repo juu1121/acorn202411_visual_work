@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello.html</title>
+</head>
+<body>
+    <script>
+        //검증할 문자열
+        const source="Hello, world!";
+        //정규표현식 객체만들기
+        const reg = /Hello2/;   //만드는방법1 : 슬래시로감싸서 만들기
+        const reg2= new RegExp("Hello"); //만드는 방법2 : RegExp객체를만들어서, 생성자에 문자열을 전달해서 만들기
+
+        //정규표현식 문자열
+        const str="^Hello"
+        //str 변수안에 있는 값을 이용해서 정규표현식 객체를 만들기
+        //const reg3=/str/; //변수를 넣을수없다!
+        const reg3_2=new RegExp(str);
+
+        //test메소드에 검증할 문자열을 넣어주면,
+        //검증할 문자열이 정규표현식과 매칭되는지 여부(일치하는 문자열이 하나라도 있는지 여부)
+        //일치하는게 하나라도 있으면, true /일치하는게 하나도 없으면 false
+        const result = reg.test(source);  //true or false를 리턴한다. 
+        const result2=reg.test(source);
+
+
+    </script>
+</body>
+</html>

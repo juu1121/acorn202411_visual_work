@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_ol.html</title>
+    <style>
+        ol{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        ol li{
+            display: inline;
+            padding: 5px 10px; /*위아래5, 좌우10*/
+        }
+        ol li a{
+            text-decoration: none;
+            color: #000;
+            padding: 5px 10px;
+        }
+        ol li a:hover, ol li a:focus{ /*포커스는 탭으로 확인가능*/
+            background-color: #999;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>순서 있는 목록(ordered list) ol 요소</h1>
+
+    <h2>공부할 순서 입니다</h2>
+    <ol>
+        <li><a href="#">html</a></li>
+        <li><a href="#">css</a></li>
+        <li><a href="#">JavaScript</a></li>
+        <button>버튼</button>
+    </ol>
+</body>
+</html>

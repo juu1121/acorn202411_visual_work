@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test02.html</title>
+</head>
+<body>
+    <script>
+        /*
+            .점은 아무거나 한 글자를 의미한다.
+        */
+        const source="Sunday";
+        const source2="Monday";
+        const source3="Tuesday";
+
+        const reg1 = /.../;  //아무거나 세글자가있는지의 여부를 검증
+        const result1=reg1.test(source); //true
+
+
+        const reg2=/...day/; //day앞에 아무거나세글자
+        const result2=reg2.test(source); //true
+        const result2_2=reg2.test(source2); //true
+        const result2_3=reg2.test(source3); //Tuesday여도 day앞에 3글자만있으면되니까 true
+
+
+        const reg3=/^...day$/; //day앞에 무조건 3글자
+        const result3=reg3.test(source); //true
+        const result3_2=reg3.test(source3); //false
+
+
+
+    </script>
+</body>
+</html>

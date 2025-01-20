@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .aaa{
+            display: block;
+            line-height: 1.6
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="send">
+            이메일 <input type="email" name="email"  value="이메일">
+            <br>
+            <select name="job" id="job">
+                <option value="doctor">의사</option>
+                <option value="teacher">선생님</option>
+            </select>
+
+            <fieldset>
+                <legend>취미선택하기</legend>
+                <input type="checkbox" name="hobby" value="drum"> 드럼
+                <input type="checkbox" name="hobby" value="piano"> 피아노
+                <input type="checkbox" name="hobby" value="etc"> 기타
+            </fieldset>
+
+            <input type="color" class="aaa" value="#0000ff">
+            <input type="date" class="aaa" value="2024-12-02">
+            <input type="datetime-local" value="2021-12-02T07:30">
+
+            <button type="submit" class="aaa">제출</button>
+            <button type="reset" class="aaa">취소</button>
+
+        </form>
+
+        <form action="send"> 
+            색상선택 <input type="color" name="color">
+            <br>
+            범위선택 <input type="range" name="range" min="0" max="100" step="10" value="50"> <!--최소,최대,몇씩늘어남,기본값으로어디에둘지-->
+            <br>
+            날짜선택 <input type="date" name="date">
+            <br>
+            시간선택 <input type="time" name="time">
+            <br>
+            날짜, 시간 선택 <input type="datetime-local" name="datetime">
+            <br>
+            숫자 <input type="number" name="number" min="0" max="10" step="1">
+            <br>
+            <button type="submit">제출</button>
+        </form>
+
+        <form action="send"></form>
+
+    </div>
+</body>
+</html>

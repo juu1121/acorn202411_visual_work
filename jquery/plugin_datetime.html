@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plugin_datetime.html</title>
+    <!--플러그인css로딩-->
+    <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
+</head>
+<body>
+    <h3>날짜 시간 선택</h3>
+    <input type="text" id="one">
+    <h3>날짜 선택</h3>
+    <input type="text" id="two">
+    <h3>시간 선택</h3>
+    <input type="text" id="three">
+    <!--jquery로딩-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"> </script>
+    <!--플러그인 javascript로딩-->
+    <script src="js/jquery.datetimepicker.full.min.js"></script>   
+    <script>
+        //언어
+        $.datetimepicker.setLocale("ko");
+
+        $("#one").datetimepicker(); 
+        $("#two").datetimepicker({
+            timepicker:false, //timepicker는 안 보이게//시간 꺼놓는다.(날짜만보이게게)
+            format:"Y-m-d" //원하는 포멧으로 날짜형식지정정 
+        });
+        $("#three").datetimepicker({
+            datepicker:false, //날짜 꺼놓는다.(시간만보이게게)
+            format:"H시i분" //시간형식지정 
+        });
+    </script>
+</body>
+</html>

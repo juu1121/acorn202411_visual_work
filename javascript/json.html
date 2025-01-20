@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json.html</title>
+</head>
+<body>
+    <h1>json 문자열 사용해보기</h1>
+    <button id="printBtn">출력하기</button>
+
+    <h2>회원정보</h2>
+    <p>
+        번호 : <strong id="num"></strong>
+        이름 : <strong id="name"></strong>
+        주소 : <strong id="addr"></strong>
+    </p>
+
+    <h2>좋아하는 음식목록</h2>
+    <ul>
+
+    </ul>
+    <script>
+        const json = `{"num":1, "name":"김구라", "addr":"노량진"}`;
+        const json2 = `["떡볶이", "라면", "김밥"]`;  
+
+        document.querySelector("#printBtn").addEventListener("click", function(){
+            const mem = JSON.parse(json);       
+            const foods = JSON.parse(json2);
+
+            document.querySelector("#num").innerText = mem.num;
+            document.querySelector("#name").innerText = mem.name;
+            document.querySelector("#addr").innerText = mem.addr;
+
+            //foods는 배열이니까 반복문돌면서
+            for(let i=0; i<foods.length; i++){
+                //li요소를 만들어서
+                const li = document.createElement("li");
+                //i번째에 저장된 문자열로 innerText를 출력하고
+                li.innerText=foods[i];
+                //ul에 li를 추가하기
+                document.querySelector("ul").append(li);
+            }
+            
+
+            // const li1=document.createElement("li");
+            // const li2=document.createElement("li");
+            // const li3=document.createElement("li");
+
+            // li1.innerText=foods[0];
+            // li2.innerText=foods[1];
+            // li3.innerText=foods[2];
+
+            // document.querySelector("ul").append(li1);
+            // document.querySelector("ul").append(li2);
+            // document.querySelector("ul").append(li3);
+
+
+        });
+
+    </script>
+</body>
+</html>

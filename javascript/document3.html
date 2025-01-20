@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document3.html</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="inputMsg" placeholder="메세지입력...">
+        <button id="addBtn">추가</button>
+        <ul id="msgList">
+            <li>어쩌구...</li>
+            <li>저쩌구...</li>
+        </ul>
+    </div>
+    <script>        
+        
+        function addText(){
+            //1. 입력한 메세지 읽어오기
+            const msg = document.querySelector("#inputMsg").value; //눌렀을때 메세지를 읽어와야하기때문에 함수안에있어야함.
+            //2. li요소를 만들어서
+            const li=document.createElement("li");
+            //3. li요소에 입력한 메세지를 innerText로 추가하고
+            li.innerText=msg;
+            //4. ul의 자식요소로 추가하기
+            document.querySelector("#msgList").append(li);
+            //5. input요소의 value에 빈문자열대입
+            document.querySelector("#inputMsg").value = "";
+        }
+
+
+        document.querySelector("#inputMsg").addEventListener("keydown", function(e){
+            console.log(e);
+            if(e.key == "Enter" ){
+                addText()
+            }
+        });
+
+    
+        document.querySelector("#addBtn").addEventListener("click", function(){
+            addText()
+        });
+    </script>
+</body>
+</html>

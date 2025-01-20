@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test04.html</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        const source="kimgura is kimgura or leegura is leegura";
+        //위의 문자열에서 단어만 추출해서 ul에 출력해보세요
+        const reg1=/[^ ]+/g;
+        while(true){
+            const match = reg1.exec(source); 
+            if(match==null) break;
+
+            //단어
+            const word=match[0];
+
+            //jquery로 작성
+            //$("li").text(word).appendTo("ul");
+            const li =document.createElement("li");
+            li.innerText=word;
+            document.querySelector("ul").append(li);
+        }
+
+        
+
+        
+
+        
+    </script>
+</body>
+</html>
