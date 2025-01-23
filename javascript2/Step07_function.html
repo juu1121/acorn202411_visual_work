@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_function.html</title>
+</head>
+<body>
+    <script>
+    //    function showInfo(num, name, addr){
+     //       console.log(`num:${num} name:${name} addr:${addr}`);
+       // }
+
+        //함수의 매개변수를 선언할때, 디폴트값을 지정할수있다.(매개변수에선언해서서)
+        function showInfo(num=0, name="이름", addr="주소"){
+            console.log(`num:${num} name:${name} addr:${addr}`);
+        }
+        
+        //함수호출하면서 매개변수에 순서대로 값 전달하기
+        showInfo(1, "kim", "seoul");
+        showInfo();
+        showInfo(2);
+        showInfo(3, "monkey");
+
+        //rest parameter
+        function printMsgs(...args){
+            //args는 매개변수에 전달된 값들이 들어있는 배열이다
+            console.log(args);
+        }
+
+        printMsgs();
+        printMsgs("hi");
+        printMsgs("hi", "bye", "hello");
+
+
+    </script>
+</body>
+</html>

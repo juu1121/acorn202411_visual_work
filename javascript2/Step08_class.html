@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_class.html</title>
+</head>
+<body>
+    <script>
+        //자바스크립트에도 class개념이있다.
+        class Car{
+            //class 메소드 
+            drive(){
+                console.log("달려요요");
+            }
+        }
+        //Car클래스로 객체를 생성해서 
+        let c1 = new Car();
+        //class 메소드 호출하기
+        c1.drive();
+
+        class Person{
+            //static 메소드
+            static showInfo(){
+                console.log("사람입니다.");
+            }
+            sing(){
+                console.log("노래를 합니다");
+            }
+        }
+        //class메소드는 객체를 생성해서 참조값으로 호출
+        new Person().sing();
+        //static 메소드느 클래스명에 .찍어서 호출
+        Person.showInfo();
+
+        class Phone{
+            //생성자 예약어  constructor(){}
+            constructor(name){
+                console.log("phone 생성자 호출됨");
+                this.name=name;
+            }
+            call(){
+                console.log(this.name+"전화를 걸어요!");
+            }
+        }
+        const p = new Phone();
+        const p1 = new Phone("iphone");
+        const p2 = new Phone("android");
+        p1.call();
+        p2.call();
+        //필드를 직접선언하지않아도, 필드가 만들어짐
+    </script>
+</body>
+</html>
