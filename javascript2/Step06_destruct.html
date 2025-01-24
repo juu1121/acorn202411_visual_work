@@ -9,13 +9,24 @@
     <script>
         //배열의 구조를 분해해서 할당하기
         //배열의 첫번쨰방의값을 a에 대입
-        const [a,b] = [10,20];
+        const [a,b,c] = [10,20, ()=>{}, 40];
 
         //object의 구조를 분해해서 할당하기
         //object의 num키값의 내용을 num에 넣겠다
         const {num, name} = {num:1, name:"김구라", addr:"노량진", isMan:true};
 
-        //
+        function useMem(arg){
+            const num=arg.num;
+            const name=arg.name;
+        }
+        function useMem2({num, name}){ //()에 여러가지 정보를 담은 오브젝트가 전달되는데, 내가 필요한값만 분해할당해서 사용
+            console.log(num+" | "+ name);
+        }
+
+        const mem={num:1, name:"김구라", addr:"노량진", isMan:true};
+        
+        useMem2(mem);
+        useMem(mem)
     </script>
 </body>
 </html>
