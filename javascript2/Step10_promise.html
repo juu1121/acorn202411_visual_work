@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_promise.html</title>
+</head>
+<body>
+    <button onclick="test()">눌러보셈</button>
+    <script>
+        function test(){
+            //promise 객체 생성 //연속으로쓴다면 new Promise().then()
+            const p1 = new Promise((resolve, reject)=>{
+                //함수의 매개변수에 두가지 함수가 전달된다. 
+                //(promise객체가 생성하면서 함수를 넣어주면 -> 그 함수의 매개변수에 함수 두가지가 전달 (매개변수에 함수가 전달되기로 약속...resolve,reject아니어도 매개변수명을 다른걸로 가능)
+                //(자바스크립트에서는 함수도 데이터, 함수도 매개변수에전달가능. 이 함수는 객체생성되는 즉시 호출된다, )
+                //resolve()는 작업이 성공되었을때(약속이성공) 호출하는 함수이고 (resolve되야 then이 실행)
+                //reject()는 실패했을때(약속이 실패했을때) 호출하는 함수이다 (reject되면 catch안에함수가 호출, 여기서 예외가 발생해도 catch안에 함수가 호출)
+                let isSuccess=true;
+
+                //테스트를 위해 약속 해결 시간을 지연시키기
+                setTimeout(()=>{
+                    if(isSuccess){
+                        resolve("작업성공!");
+                    }else{
+                        reject("작업실패ㅜㅜ");
+                    }   
+                }, 3000); //첫번째함수를 두번째숫자만큼 지연시킨다음 호출
+
+            });
+            
+            //promise가 이행이 된다면 then() 안에 있는 함수가 호출되고
+            p1.then(result =>{
+                //result 매개 변수에 결과 데이터가 담겨 있는 구조이다.
+                console.log(result);
+            })
+            .catch(err=>{ //promise가 reject되면 catch()안에 있는 함수가 호출
+                console.log(err);
+            })
+            .finally(()=>{
+                //약속이행, 실패여부와 상관없이 호출되는 함수
+                console.log("작업이 완료되었습니다.")
+            });
+        }
+    </script>
+</body>
+</html>
