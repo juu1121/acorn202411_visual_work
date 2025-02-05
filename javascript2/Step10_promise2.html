@@ -11,7 +11,7 @@
         function test(){
             //promise 객체 생성 //연속으로쓴다면 new Promise().then()
             const p1 = new Promise((resolve, reject)=>{
-                let isSuccess=true;
+                let isSuccess=false;
                 setTimeout(()=>{
                     if(isSuccess){
                         resolve("작업성공!");
@@ -35,7 +35,7 @@
                 console.log(result);
             })
             .catch(err=>{ //promise가 reject되면 catch()안에 있는 함수가 호출
-                console.log(err);
+                console.log(err+"나나나");
             })
             .finally(()=>{
                 //약속이행, 실패여부와 상관없이 호출되는 함수

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step10_promise3.html</title>
+    <title>test.html</title>
 </head>
 <body>
     <button onclick="doIt()">작업시작</button>
@@ -20,34 +20,14 @@
                 ==> 함수가 리턴되기까지 시간이 걸림
                 ==> awai은 비동기함수안에서 실행되되기떄문에 표시를 해줘야함 (async붙이기!)
             */
-            try{
-                const res = await fetch("http://localhost:8888/Step07Final/ajax/member2.jsp");
-                // res.ok 에는 정상적인 응답이 왔는지 여부가 true, or false로 들어 있다
-                // res라는 응답객체에 ok라는 방이있대~
-                if(!res.ok){
-                    //400번대 혹은 500번대 에러 응답인 경우 여기가 실행된다.
-                    throw new Error(`HTTP에러! 상태코드:${res.status}`);
-                }
-
-                const data = await res.json(); //얘도 promise
-
-                console.log(data);
-            }catch(err){
-                console.log(err+"실패하면여기로?");
-            }finally{
-                console.log("작업완료!");
-            }
+            const res = await fetch("http://localhost:8888/Step07Final/ajax/member.jsp");
+            const data = await res.json(); //얘도 promise
+            console.log(data);
             console.log("doIt함수가 리턴됩니다.")
-        }
-
-        //async 함수는 다양한 모양으로 만들수있다.//async를 붙이는 이유는 이 안에 await가 올 수도있어서(비동기함수)
-        async function a(){
 
         }
 
-        const b = async function(){};
-
-        const c = async ()=>{};
+ 
     </script>
 </body>
 </html>
