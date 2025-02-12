@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_1_alone_animatetest.html</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        /* 커스텀 애니메이션 정의 */
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(200px);
+                opacity: 0;
+            }
+        }
+        .slide-out {
+            animation: slideOut 1s ease-in-out;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">Click Me</div>
+<script>
+    const box = document.querySelector('.box');
+
+    box.addEventListener('click', () => {
+        box.classList.add('slide-out');
+
+        box.addEventListener('animationend', () => {
+            console.log('애니메이션이 끝났습니다!');
+            box.style.display = 'none'; // 요소 숨기기
+        }, { once: true }); // 이벤트가 한 번만 실행되도록 설정
+    });
+</script>
+</body>
+</html>

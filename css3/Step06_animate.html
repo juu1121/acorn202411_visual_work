@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_animate.html</title>
+    <!-- animate CSS로딩-->
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <h1 class="animate__animated animate__fadeInLeftBig">Animate CSS</h1>
+    <p class="animate__animated animate__flip">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, iure enim cum quam omnis sunt, tenetur veniam eos ipsam voluptate autem repudiandae saepe harum eaque nulla ex doloribus ullam rerum?</p>
+    <p>페이지 로딩시점에 1번 1초동안 동작한다.</p>
+    <h1 class="animate__animated animate__bounce animate__infinite">무한반복</h1>
+    <button class="animate__animated" id="myBtn">동작시점변경경</button>
+    <script>
+        document.querySelector("#myBtn").addEventListener("click", (e)=>{
+            //animation에 관련된 클래스 추가하기
+            e.target.classList.add("animate__flip");
+            //animation이 끝났을때 실행할 함수 등록
+            e.target.addEventListener("animationend", (e)=>{
+                e.target.classList.remove("animate__flip");
+            });
+        });
+
+    </script>
+</body>
+</html>
